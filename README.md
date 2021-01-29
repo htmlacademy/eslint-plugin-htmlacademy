@@ -35,7 +35,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "htmlacademy/rule-name": 2
+        "htmlacademy/array-names-plural": 2
     }
 }
 ```
