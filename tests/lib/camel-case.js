@@ -16,8 +16,11 @@ describe('splitCamelCase()', () => {
     expect(splitCamelCase('helloWorld')).to.deep.eq(['hello', 'world']);
   });
 
-  it('should split uppercase part', () => {
-    // TODO: fix up hanging here
-    expect(splitCamelCase('fooBZ')).to.deep.eq(['foo', 'b', 'z']);
+  it('should split camelcased name with three parts', () => {
+    expect(splitCamelCase('fooBarBaz')).to.deep.eq(['foo', 'bar', 'baz']);
   });
+
+   it('should split uppercase part', () => {
+     expect(splitCamelCase('fooBZ')).to.deep.eq(['foo', 'b', 'z']);
+   });
 });

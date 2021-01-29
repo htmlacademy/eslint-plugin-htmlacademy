@@ -4,27 +4,16 @@
  */
 "use strict";
 
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-
-const rule = require("../../../lib/rules/array-names-plural");
 const {RuleTester} = require("eslint");
+const rule = require("../../../lib/rules/array-names-plural");
 
-const parserOptions = {ecmaVersion: 2015};
-
-
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
-
-const code = (codeString) => ({
-  code: codeString,
-  parserOptions
+RuleTester.setDefaultConfig({
+  parserOptions: {
+    ecmaVersion: 2015
+  }
 });
 
 const invalidCode = (codeString, type = 'VariableDeclarator') => ({
-  parserOptions,
   code: codeString,
   errors: [{
     message: "Array name should be plural noun",
@@ -34,11 +23,11 @@ const invalidCode = (codeString, type = 'VariableDeclarator') => ({
 
 const ruleTester = new RuleTester();
 ruleTester.run("array-names-plural", rule, {
-
     valid: [
-      code("const cats = ['Muffin', 'Gray'];"),
-      code("const items = ['Green', 'Yellow', 'Red'];"),
-      code("const obj = { weights: [ 38, 42 ] };")
+      "const cats = ['Muffin', 'Gray'];",
+      "const items = ['Green', 'Yellow', 'Red'];",
+      "const obj = { weights: [ 38, 42 ] };",
+      "const greenLines = [];"
     ],
 
     invalid: [
