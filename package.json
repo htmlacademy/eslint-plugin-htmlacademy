@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "categorized-words": "1.0.0",
-    "requireindex": "~1.1.0"
+    "requireindex": "~1.1.0",
+    "wink-lexicon": "2.1.2"
   },
   "devDependencies": {
     "chai": "4.2.0",
