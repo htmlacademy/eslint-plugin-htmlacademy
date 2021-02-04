@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-htmlacademy",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Rules collection for javascript intensives",
   "keywords": [
     "eslint",
