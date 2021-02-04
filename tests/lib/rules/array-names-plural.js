@@ -13,10 +13,10 @@ RuleTester.setDefaultConfig({
   }
 });
 
-const invalidCode = (codeString, type = 'VariableDeclarator') => ({
+const invalidCode = (codeString, name, type = 'VariableDeclarator') => ({
   code: codeString,
   errors: [{
-    message: "Array name should be plural noun",
+    message: 'Provided array name «' + name + '» is not plural noun',
     type
   }]
 });
@@ -31,8 +31,8 @@ ruleTester.run("array-names-plural", rule, {
     ],
 
     invalid: [
-      invalidCode("const dog = [1, 2, 3];"),
-      invalidCode("const emans = [1, 2, 3];"),
-      invalidCode("const obj = { weight: [ 38, 42 ] };", "Property")
+      invalidCode("const dog = [1, 2, 3];", "dog"),
+      invalidCode("const emans = [1, 2, 3];", "emans"),
+      invalidCode("const obj = { weight: [ 38, 42 ] };", "weight", "Property")
     ]
 });
