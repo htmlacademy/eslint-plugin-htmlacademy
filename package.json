@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "categorized-words": "1.0.0",
-    "requireindex": "~1.1.0",
+    "english-verbs-gerunds": "1.1.4",
     "wink-lexicon": "2.1.2"
   },
   "devDependencies": {
