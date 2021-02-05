@@ -32,6 +32,7 @@ ruleTester.run("value-single-noun", rule, {
     "let isDone = true;",
     "function check (name) {}",
     "try {} catch (err) {}",
+    "for (let i = 0; i < 10; i++) {}",
   ],
 
   invalid: [
@@ -64,6 +65,12 @@ ruleTester.run("value-single-noun", rule, {
       errors: [{
         message: "Catch parameter name «arg» should be singular noun",
         type: "CatchClause"
+      }]
+    }, {
+      code: "for (let x1 = 0; x1 < 100; x1++) {}",
+      errors: [{
+        message: "Variable declaration name «x1» should be singular noun",
+        type: "VariableDeclarator"
       }]
     }
   ]
