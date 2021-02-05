@@ -72,6 +72,12 @@ ruleTester.run("value-single-noun", rule, {
         message: "Variable declaration name «x1» should be singular noun",
         type: "VariableDeclarator"
       }]
+    }, {
+      code: "for (let i = 0; i < 100; i++) { let j = 5; }",
+      errors: [{
+        message: "Variable declaration name «j» should be singular noun",
+        type: "VariableDeclarator"
+      }]
     }
   ]
 });
