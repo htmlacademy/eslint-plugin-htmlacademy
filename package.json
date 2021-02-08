@@ -7,7 +7,7 @@
     "eslintplugin",
     "eslint-plugin"
   ],
-  "author": "Sergey Kluchkovsky",
+  "author": "Sergey Kluchkowsky",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha tests --recursive"
