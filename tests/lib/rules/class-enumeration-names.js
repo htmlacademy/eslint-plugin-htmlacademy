@@ -28,7 +28,7 @@ ruleTester.run("class-enumeration-names", rule, {
   valid: [
     "const Human = function () { this.name = 'John'; };",
     "class Job {}",
-    "const Enumeration = { OK: 1, STATUS_FAIL: 0 };",
+    "const Result = { OK: 1, STATUS_FAIL: 0 };",
     "const Status = { OK: 1 };"
   ],
 
@@ -58,9 +58,9 @@ ruleTester.run("class-enumeration-names", rule, {
         type: "ClassDeclaration"
       }]
     }, {
-      code: "const enumeration = { OK: 1, FAIL: 0 };",
+      code: "const result = { OK: 1, FAIL: 0 };",
       errors: [{
-        message: "Enumeration name «enumeration» should start with uppercase letter and be single noun",
+        message: "Enumeration name «result» should start with uppercase letter and be single noun",
         type: "VariableDeclarator"
       }]
     }
