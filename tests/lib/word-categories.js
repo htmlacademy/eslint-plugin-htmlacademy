@@ -1,7 +1,11 @@
 // tests/lib/word-categories.js
 
 const {expect} = require('chai');
-const {isGerund} = require("../../lib/word-categories");
+const {
+  isGerund,
+  isSingleNoun,
+  // isPluralNoun,
+} = require("../../lib/word-categories");
 
 describe('isGerund()', () => {
   it('should return true for «watching»', () => {
@@ -14,5 +18,19 @@ describe('isGerund()', () => {
 
   it('should return false for «greencheesing»', () => {
     expect(isGerund('greencheesing')).to.eq(false);
+  });
+});
+
+describe('isSingleNoun()', () => {
+  it('should return true for knife', () => {
+    expect(isSingleNoun('knife')).to.eq(true);
+  });
+
+  it('should return false for knives', () => {
+    expect(!!isSingleNoun('knives')).to.eq(false);
+  });
+
+  it('should return true for status', () => {
+    expect(isSingleNoun('status')).to.eq(true);
   });
 });

@@ -28,7 +28,8 @@ ruleTester.run("class-enumeration-names", rule, {
   valid: [
     "const Human = function () { this.name = 'John'; };",
     "class Job {}",
-    "const Enumeration = { OK: 1, STATUS_FAIL: 0 };"
+    "const Enumeration = { OK: 1, STATUS_FAIL: 0 };",
+    "const Status = { OK: 1 };"
   ],
 
   invalid: [
@@ -39,15 +40,15 @@ ruleTester.run("class-enumeration-names", rule, {
         type: "VariableDeclarator"
       }]
     }, {
-      code: "const Knives = function () { this.name = \"John\"; };",
+      code: "const Bazz = function () { this.name = \"John\"; };",
       errors: [{
-        message: "Constructor name «Knives» should start with uppercase letter and be single noun",
+        message: "Constructor name «Bazz» should start with uppercase letter and be single noun",
         type: "VariableDeclarator"
       }]
     }, {
-      code: "function Knives() { this.name = \"Long\"; };",
+      code: "function Bazz() { this.name = \"Long\"; };",
       errors: [{
-        message: "Constructor name «Knives» should start with uppercase letter and be single noun",
+        message: "Constructor name «Bazz» should start with uppercase letter and be single noun",
         type: "FunctionDeclaration"
       }]
     }, {
