@@ -33,4 +33,12 @@ describe('isSingleNoun()', () => {
   it('should return true for status', () => {
     expect(isSingleNoun('status')).to.eq(true);
   });
+
+  it('should return true for callback', () => {
+    expect(isSingleNoun('callback')).to.eq(true);
+  });
+
+  it('should return true for parameter', () => {
+    expect(isSingleNoun('parameter')).to.eq(true);
+  });
 });
