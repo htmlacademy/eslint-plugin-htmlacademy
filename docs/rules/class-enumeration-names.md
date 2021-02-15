@@ -59,4 +59,3 @@ const Status = {
 ## When Not To Use It
 
 Do not use this rule unless in htmlacademy intensives or in htmlacademy task-check.
-

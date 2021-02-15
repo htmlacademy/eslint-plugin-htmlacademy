@@ -1,36 +1,44 @@
 # Function/method name should start with verb (function-starts-verb)
 
-Please describe the origin of the rule here.
-
+Variable declarations, function declarations that are not initialized
+with function with this expression should have name that
+starts with verb and starts with lowercase letter.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
+// Function name is not a verb
+const foo = () => null;
 
-// fill me in
+// Method name is not a verb
+const obj = { baz() {} };
 
+// Method definition is not a verb
+class Human {
+  baz() {}
+}
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
+// Function name starts with verb "get"
+const getName = () => name;
 
-// fill me in
-
+// Method name "constructor" is an exception
+class Human { constructor() {} }
 ```
 
 ### Options
 
-If there are any options, describe them here. Otherwise, delete this section.
+```js
+// Using that option you will get russian error messages
+["error", {lang: "ru"}];
+```
 
 ## When Not To Use It
 
-Give a short description of when it would be appropriate to turn off this rule.
+Do not use this rule unless in htmlacademy intensives or in htmlacademy task-check.
 
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
