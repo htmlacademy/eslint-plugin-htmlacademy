@@ -1,11 +1,12 @@
 # Array names should be plural nouns (array-names-plural)
 
-Please describe the origin of the rule here.
-
+Variables that are initialized with array literals
+or properties in objects that have array literal value
+should have name that is plural noun, starting with lowercase letter.
 
 ## Rule Details
 
-This rule aims to...
+
 
 Examples of **incorrect** code for this rule:
 

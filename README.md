@@ -35,11 +35,17 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "htmlacademy/array-names-plural": 2
+        "htmlacademy/array-names-plural": 1,
+        "htmlacademy/class-enumeration-names": 1,
+        "htmlacademy/function-starts-verb": 1,
+        "htmlacademy/value-single-noun": 1
     }
 }
 ```
 
 ## Supported Rules
 
-* Fill in provided rules here
+ * Array names should be plural nouns (array-names-plural)
+ * Class/enumeration name should be noun starting with uppercase letter (class-enumeration-names)
+ * Function/method name should start with verb (function-starts-verb)
+ * Value name should be single noun (value-single-noun)
