@@ -1,36 +1,50 @@
 # Value name should be single noun (value-single-noun)
 
-Please describe the origin of the rule here.
-
+Variable declaration names, function parameters or catch clause parameters
+should have name that is single noun and starts with lowercase letter.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
+// Variable name is not noun
+let x1 = 5;
 
-// fill me in
+// Parameter name is not noun
+const check = (arg1) => null;
 
+// Catch clause parameter name is not single noun
+try {} catch (arg) {}
+
+// Variable declarator in for() is not single noun nor it is one of exceptions
+for (let x1 = 0; x1 < 100; x1++) {}
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
+// Variable name is single noun
+const name = 'Value';
 
-// fill me in
+// Function parameter name is noun
+function check(name) {}
 
+// Catch clause parameter is err (it is one of exceptions in this case)
+try {} catch(err) {}
+
+// Index variable may have name i, j, k...
+for (let i = 0; i < 10; i++) {}
 ```
 
 ### Options
 
-If there are any options, describe them here. Otherwise, delete this section.
+```js
+// Using that option you will get russian error messages
+["error", {lang: "ru"}];
+```
 
 ## When Not To Use It
 
-Give a short description of when it would be appropriate to turn off this rule.
+Do not use this rule unless in htmlacademy intensives or in htmlacademy task-check.
 
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
