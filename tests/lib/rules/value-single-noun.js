@@ -31,6 +31,7 @@ ruleTester.run("value-single-noun", rule, {
     "const isLoading = false;",
     "let isDone = true;",
     "function check (name) {}",
+    "function check (cb) {}",
     "try {} catch (err) {}",
     "for (let i = 0; i < 10; i++) {}",
   ],
