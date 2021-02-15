@@ -1,11 +1,11 @@
 # Class/enumeration name should be noun starting with upcase letter (class-enumeration-names)
 
-Please describe the origin of the rule here.
+Class names (that may be function name with this expression inside)
+and enumeration names (variables, initialized with object, that have
+keys with all-caps names, like "OK" or "NOT\_FOUND")
 
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
@@ -51,12 +51,12 @@ const Status = {
 
 ### Options
 
-If there are any options, describe them here. Otherwise, delete this section.
+```js
+// Using that option you will get russian error messages
+["error", {lang: "ru"}];
+```
 
 ## When Not To Use It
 
-Give a short description of when it would be appropriate to turn off this rule.
+Do not use this rule unless in htmlacademy intensives or in htmlacademy task-check.
 
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
