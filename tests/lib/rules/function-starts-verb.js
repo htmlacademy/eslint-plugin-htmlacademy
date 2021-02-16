@@ -40,6 +40,13 @@ ruleTester.run("function-starts-verb", rule, {
         message: "Function name «baz» does not start with verb",
         type: "MethodDefinition"
       }]
+    }, {
+      // Uppercase function name
+      code: "const GetName = () => null;",
+      errors: [{
+        message: "Function name «GetName» does not start with verb",
+        type: "VariableDeclarator"
+      }]
     }
   ]
 });
