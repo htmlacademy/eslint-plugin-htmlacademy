@@ -8,6 +8,13 @@ const {rules} = require("../..");
 
 const {expect} = require("chai");
 
+const isEslintRule = (object) => {
+  return (
+    typeof object.meta === 'object' &&
+      typeof object.create === 'function'
+  );
+};
+
 describe("all rules are exported", () => {
   const dir = fs.opendirSync(dirPath);
   let entry = dir.readSync();
@@ -16,9 +23,10 @@ describe("all rules are exported", () => {
     const {name} = entry;
     if (name.endsWith('.js')) {
       const ruleName = name.slice(0, -3);
+      const rule = rules[ruleName];
 
-      it(`should export «${ruleName}» rule`, () => {
-        expect(typeof rules[ruleName]).to.eq('object');
+      it(`«${ruleName}» should be a rule`, () => {
+        expect(isEslintRule(rule)).to.eq(true);
       });
     }
     entry = dir.readSync();
