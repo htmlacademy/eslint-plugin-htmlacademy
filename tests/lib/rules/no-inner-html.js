@@ -8,20 +8,23 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require("../../../lib/rules/no-inner-html"),
+const rule = require("../../../lib/rules/no-inner-html");
+const {RuleTester} = require("eslint");
 
-    RuleTester = require("eslint").RuleTester;
-
+RuleTester.setDefaultConfig({
+  parserOptions: {
+    ecmaVersion: 2015
+  }
+});
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 ruleTester.run("no-inner-html", rule, {
 
   valid: [
-    // give me some code that won't trigger a warning
     "el.textContent = 'Foobar';",
     "let value = el.innerHTML;"
   ],
