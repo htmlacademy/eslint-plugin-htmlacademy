@@ -26,7 +26,8 @@ ruleTester.run("no-inner-html", rule, {
 
   valid: [
     "el.textContent = 'Foobar';",
-    "let value = el.innerHTML;"
+    "let value = el.innerHTML;",
+    "el.innerHTML = '';"
   ],
 
   invalid: [
