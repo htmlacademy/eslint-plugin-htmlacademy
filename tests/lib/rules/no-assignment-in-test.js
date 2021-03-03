@@ -33,6 +33,11 @@ ruleTester.run("no-assignment-in-test", rule, {
 
     // Not inside test
     "i += 10;",
+
+    `const template = keys.reduce((collectKeys, key) => {
+      collectKeys[key.toUpperCase()] = [];
+      return collectKeys;
+    }, {});`
   ],
 
   invalid: [
