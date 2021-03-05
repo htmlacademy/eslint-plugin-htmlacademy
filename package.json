@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-htmlacademy",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "Rules collection for javascript intensives",
   "keywords": [
     "eslint",
@@ -10,7 +10,9 @@
   "author": "Sergey Kluchkowsky",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha tests --recursive"
+    "lint": "eslint lib/**/*.js",
+    "test:unit": "mocha tests --recursive",
+    "test": "npm run lint & npm run test:unit"
   },
   "dependencies": {
     "categorized-words": "1.0.0",
