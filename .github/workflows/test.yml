@@ -1,0 +1,44 @@
+name: test
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: '*'
+
+env:
+  NPM_TOKEN_GITHUB: ${{ secrets.NPM_TOKEN_GITHUB }}
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.18]
+
+    timeout-minutes:
+      10
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: install dependencies
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN_GITHUB}" >> $HOME/.npmrc
+          npm i --engine-strict
+
+      - name: test lint
+        run: |
+          npm run lint
+
+      - name: test unit
+        run: |
+          npm run test:unit
