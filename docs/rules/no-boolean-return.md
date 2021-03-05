@@ -1,36 +1,39 @@
 # Should not return true/false from if/else (no-boolean-return)
 
-Please describe the origin of the rule here.
+All `if` statements, returning `true` from first branch and `false`
+from alternative branch, should be replaced with `return` statement.
 
 
 ## Rule Details
 
-This rule aims to...
-
 Examples of **incorrect** code for this rule:
 
 ```js
-
-// fill me in
-
+const compareTo5 = (value) => {
+  if (value === 5) {
+    return true;
+  } else {
+    return false;
+  }
+};
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
-
-// fill me in
-
+const compareTo5 = (value) => {
+  return (value === 5);
+};
 ```
 
 ### Options
 
-If there are any options, describe them here. Otherwise, delete this section.
+```js
+// Using that option you will get russian error messages
+["error", {lang: "ru"}];
+```
 
 ## When Not To Use It
 
-Give a short description of when it would be appropriate to turn off this rule.
+Do not use this rule unless in htmlacademy intensives or in htmlacademy task-check.
 
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
