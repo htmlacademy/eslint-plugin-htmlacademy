@@ -29,6 +29,12 @@ ruleTester.run("no-boolean-return", rule, {
         message: "If statement may be replaced with return statement",
         type: "IfStatement"
       }]
+    }, {
+      code: "var fn = function (value) { if (value !== 5) { return false; } else { return true; } }",
+      errors: [{
+        message: "If statement may be replaced with return statement",
+        type: "IfStatement"
+      }]
     }
   ]
 });
