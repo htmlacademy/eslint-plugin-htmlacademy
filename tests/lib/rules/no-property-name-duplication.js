@@ -1,6 +1,6 @@
 /**
  * @fileoverview Property name should not contain object&#39;s name
- * @author Sergey Kluchkovsky
+ * @author Sergey Kluchkowsky
  */
 "use strict";
 
