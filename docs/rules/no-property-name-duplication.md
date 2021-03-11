@@ -1,36 +1,44 @@
 # Property name should not contain object&#39;s name (no-property-name-duplication)
 
-Please describe the origin of the rule here.
-
+Properties in variable initialization object should not include
+variable name.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
+const wizard = {
+  // Property name contains "wizard"
+  wizardName: 'Pendalf',
 
-// fill me in
-
+  // Method name contains "wizard"
+  getWizardAge() {
+    return 35;
+  }
+};
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
-
-// fill me in
+const wizard = {
+  name: 'Pendalf',
+  getAge() {
+    return 35;
+  }
+};
 
 ```
 
 ### Options
 
-If there are any options, describe them here. Otherwise, delete this section.
+```js
+// Using that option you will get russian error messages
+["error", {lang: "ru"}];
+```
 
 ## When Not To Use It
 
-Give a short description of when it would be appropriate to turn off this rule.
+Do not use this rule unless in htmlacademy intensives or in htmlacademy task-check.
 
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
