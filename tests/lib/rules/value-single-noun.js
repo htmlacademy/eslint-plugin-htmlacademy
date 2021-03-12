@@ -38,6 +38,11 @@ ruleTester.run("value-single-noun", rule, {
     // Do not report error for functions
     "const getValue = () => null",
     "const getAge = function () {}",
+
+    // Variable names may contain two parts
+    "const redButton = 5;",
+    "const errorMessage = 'Wtf?';",
+    "const imgSize = 600;",
   ],
 
   invalid: [
