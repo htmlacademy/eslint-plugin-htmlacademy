@@ -34,6 +34,15 @@ ruleTester.run("value-single-noun", rule, {
     "function check (cb) {}",
     "try {} catch (err) {}",
     "for (let i = 0; i < 10; i++) {}",
+
+    // Do not report error for functions
+    "const getValue = () => null",
+    "const getAge = function () {}",
+
+    // Variable names may contain two parts
+    "const redButton = 5;",
+    "const errorMessage = 'Wtf?';",
+    "const imgSize = 600;",
   ],
 
   invalid: [
