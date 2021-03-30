@@ -26,7 +26,9 @@ const ruleTester = new RuleTester();
 ruleTester.run("export-class-default", rule, {
   valid: [
     "class Foo {}; export default Foo",
-    "export default class Foo {}"
+    "export default class Foo {}",
+    "const Foo = class {}; export default Foo",
+    "let Foo = class {}; export default Foo",
   ],
 
   invalid: [
