@@ -4,7 +4,7 @@ const {expect} = require('chai');
 const {
   isGerund,
   isSingleNoun,
-  // isPluralNoun,
+  isWord,
 } = require("../../lib/word-categories");
 
 describe('isGerund()', () => {
@@ -40,5 +40,26 @@ describe('isSingleNoun()', () => {
 
   it('should return true for parameter', () => {
     expect(isSingleNoun('parameter')).to.eq(true);
+  });
+});
+
+describe('isWord()', () => {
+  it('should return true for nouns', () => {
+    expect(isWord('name')).to.eq(true);
+    expect(isWord('names')).to.eq(true);
+  });
+
+  it('should return true for verbs', () => {
+    expect(isWord('go')).to.eq(true);
+    expect(isWord('went')).to.eq(true);
+    expect(isWord('gone')).to.eq(true);
+  });
+
+  it('should return true even for particles', () => {
+    expect(isWord('for')).to.eq(true);
+  });
+
+  it('should return false for wrong words', () => {
+    expect(isWord('ffffff')).to.eq(false);
   });
 });
