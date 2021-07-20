@@ -27,7 +27,7 @@ const names = objects.map((o) => o.name);
 
 // forEach value should not be stored
 // forEach callback should not return value
-const result = objects.forEach((o) => {
+objects.forEach((o) => {
   o.greet();
 });
 ```
