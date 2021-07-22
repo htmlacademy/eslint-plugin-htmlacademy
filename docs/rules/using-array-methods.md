@@ -25,6 +25,9 @@ Examples of **correct** code for this rule:
 // Map value should be stored
 const names = objects.map((o) => o.name);
 
+// Map value may be used in next call
+objects.map((o) => o.name).join(', ');
+
 // forEach value should not be stored
 // forEach callback should not return value
 objects.forEach((o) => {
