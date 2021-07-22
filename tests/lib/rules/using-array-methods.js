@@ -19,6 +19,7 @@ ruleTester.run("using-array-methods", rule, {
   valid: [
     "const names = objects.map((o) => o.name);",
     "objects.map((o) => o.name).join(\", \");",
+    "objects.filter((o) => o.visible).length;",
     "const namesString = objects.filter((o) => o.weight > 10).map((o) => o.name).join(', ');",
     "objects.forEach((o) => o.greet());",
     "objects.map", // MemberExpression should not be checked unless it's in CallExpression
