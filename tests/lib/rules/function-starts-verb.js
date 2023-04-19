@@ -18,7 +18,9 @@ ruleTester.run("function-starts-verb", rule, {
 
   valid: [
     "const getName = () => name;",
-    "class Human { constructor() {} }"
+    "class Human { constructor() {} }",
+    "const initializeBounds = () => 0;",
+    "const unblock = () => 0;"
   ],
 
   invalid: [
